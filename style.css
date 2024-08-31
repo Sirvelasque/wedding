@@ -1,0 +1,293 @@
+body {
+    margin: 0;
+    font-family: "Junge";
+  }
+  
+  .parallax {
+    height: 100vh;
+    overflow-x: hidden;
+  
+    perspective: 1px;
+  }
+  
+  .parallax-layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .layer1 {
+    transform: translateZ(0);
+  }
+  
+  .layer2 {
+    transform: translateZ(-1px) scale(2);
+  }
+  
+  .layer3 {
+    transform: translateZ(-2px) scale(3);
+  }
+  
+  /* specific to this implementation */
+  div {
+    text-align: center;
+  }
+  
+  .parallax-layer.layer1 {
+    width: 100%;
+    height: fit-content ;
+    
+    z-index: 2;
+    top: 50px;
+  }
+  
+  .parallax-layer.layer2 {
+    top: 2px;
+  
+    width: 100%;
+    height: 300rem;
+    z-index: 1;
+    background-color: green;
+    background-image: url("./assets/FONDO.jpg");
+    background-size: cover;
+    background-position: 0 950px;
+  }
+  
+  .parallax-layer.layer3 {
+    top: 20rem;
+  
+    width: 100%;
+    height: 50rem;
+  
+    background-color: blue;
+  }
+
+  .imgmg {
+    margin-top: 50px;
+  }
+  .imgmg img {
+    max-width: 70%;
+  }
+
+  .anillos {
+    background-image: url("./assets/Gran-dia.svg");
+    width: 100px;
+    height: 120px;
+    background-repeat: no-repeat;
+    align-self: center;
+    font-size: 18px;
+    text-align: center;
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  .anillos .textdia {
+    align-self: flex-end;
+    font-size: 18px !important;
+  }
+
+  .chart {
+    position: relative;
+    top: 0;
+    width: 18rem;
+    
+    align-self: center;
+  }
+
+  .chart img{
+    width: 100%;
+  }
+
+  .wedDate {
+    font-family: "Playball";
+    color: #442e2e;
+    font-size: 2.5rem;
+  }
+
+  .grandia {
+    width: 18rem;
+    align-self: center;
+  }
+
+  .grandia img {
+    overflow-clip-margin: content-box;
+    overflow: cli;
+  }
+
+
+  .grid-container {
+    margin-top: 20px;
+    font-weight: 200;
+    align-self: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 48px auto;
+    width: 312px;
+    height: 10rem;
+    border: 1px solid #ccc;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    text-align: center;
+}
+
+.grid-item p{
+  margin-top: 0;
+}
+
+.grid-item span{
+  font-size: 2rem;
+}
+
+.title {
+    grid-column: span 4;
+    font-size: 2rem;
+    background-color: #aa7474;
+}
+
+.musicBox {
+  position: relative;
+  align-self: center;
+  width: 320px;
+  color: #d6dee7;
+  margin-top: 110px;
+}
+.shape {
+  filter: drop-shadow(8px 4px 26px rgba(0, 0, 0, 0.4));
+
+}
+
+
+.square {
+  width: 300px;
+  height: 90px;
+  position: relative;
+  left: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+
+}
+
+.circle {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border-radius: 50px;
+  top: -45px;
+  background-color: #fff;
+  left:30px;
+
+}
+
+.buttonsPanel {
+  display: flex;
+  position: absolute;
+  z-index: 3;
+  top: 30px;
+  right: 30px;
+}
+
+.mB {
+  margin-left: 45px;
+  font-size: 1.7rem;
+}
+
+.cd {
+  position: absolute;
+  border-radius: 50px;
+  height: 85px;
+  width: 85px;
+  top: 2.5px;
+  left: 2.5px;
+  background-color: #aa7474;
+}
+
+.cdcenter {
+  position: absolute;
+  background-color: rgb(226, 217, 217);
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  top: 33px;
+  left: 33px;
+  border: 1px solid #857b7b;
+}
+
+.historia {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 5px;
+  width: 70%;
+  align-self: center;
+  box-shadow: 0 10px 30px black;
+  padding-bottom: 10px;
+}
+
+.historiaimg {
+  background-image: url("./assets/Nuestra-historia.svg");
+  height: 200px;
+  width: 195px;
+  align-self: center;
+}
+
+.historiarings {
+  background-image: url("./assets/rings.svg");
+  height: 80px;
+  width: 73px;
+  align-self: center;
+  background-repeat: no-repeat;
+  margin-top: 10px;
+}
+
+.cone {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+}
+
+.lefside {
+  width: 50px;
+    height: 50px;
+    background-color: #ffffff; 
+    mask-image: radial-gradient(circle, transparent 70%, black 75%);
+    mask-position: right top;
+    mask-size: 200% 200%;
+}
+
+.rightside {
+  width: 50px;
+  height: 50px;
+  background-color: #ffffff; 
+  mask-image: radial-gradient(circle, transparent 70%, black 75%);
+  mask-position: left top;
+  mask-size: 200% 200%;
+}
+
+
+.lefside::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #3498db;
+  mask-image: radial-gradient(circle, transparent 70%, black 85%);
+  mask-position: right top;
+  mask-size: 200% 200%;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5)); /* Sombra alrededor de la máscara */
+  
+}
