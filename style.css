@@ -233,6 +233,7 @@ body {
   align-self: center;
   box-shadow: 0 10px 30px black;
   padding-bottom: 10px;
+  max-width: 505px;
 }
 
 .historiaimg {
