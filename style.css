@@ -292,3 +292,32 @@ body {
   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5)); /* Sombra alrededor de la máscara */
   
 }
+
+.momentos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  align-self: center;
+  width: 100%;
+  height: 1000px;
+
+}
+
+.momentos_Ico {
+  width: 80px;
+  height: 88px;
+  background-image: url("./assets/Nuestros-momentos.svg");
+  background-repeat: no-repeat;
+
+}
+
+.cartText {
+  font-family: "Playball";
+  font-size: 32px;
+  color: #424222;
+}
+
+.momentosSlider {
+  height: 100%;
+}
