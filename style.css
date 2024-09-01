@@ -208,7 +208,8 @@ body {
   width: 85px;
   top: 2.5px;
   left: 2.5px;
-  background-image: url("./assets/bg.png");
+  background-image: url("./assets/bg2.jfif");
+  background-size: contain;
 }
 
 .cdcenter {
@@ -321,3 +322,5 @@ body {
 .momentosSlider {
   height: 100%;
 }
+
+

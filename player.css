@@ -1,0 +1,70 @@
+.player {
+    position: absolute;
+    width: 280px;
+    height: 85px;
+    background-color: rgba(236, 167, 236, 0.2);
+    top: -85px;
+    right: 0;
+    border-radius: 10px;
+    color: #fff;
+    padding-top: 10px;
+    text-align: center;
+    transition: top 0.5s;
+}
+
+.currentTime {
+    position: absolute;
+    top: 40px;
+    right: 150px;
+
+}
+
+.totalTime {
+    position: absolute;
+    top: 40px;
+    right: 20px;
+}
+.time-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.playBar-container {
+    width: 150px;
+    height: 5px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 20px 0 0 100px;
+}
+
+.playBar {
+    width: 0%;
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.1s;
+}
+
+.girando {
+    animation: girar 5s linear infinite;
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.hiddenPlay {
+    top:2px;
+}
+
+#songControll {
+    width: 20px;
+}

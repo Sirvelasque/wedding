@@ -7,6 +7,7 @@
     <title>Martha&Grebil</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="slider.css">
+    <link rel="stylesheet" href="player.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Junge&family=Playball&display=swap" rel="stylesheet">
@@ -39,6 +40,16 @@
         </div>
         <div class="musicBox">
           <div class="shape">
+            <div class="player hiddenPlay">
+              <div class="songName">uga buga</div>
+              <div class="time-container">
+                <div class="currentTime">0:00</div>
+                <div class="totalTime">0:00</div>
+            </div>
+            <div class="playBar-container">
+                <div class="playBar"></div>
+            </div>
+            </div>
             <div class="square"></div>
             <div class="circle">
               <div class="cd">
@@ -49,8 +60,9 @@
 
           <div class="buttonsPanel">
             <div class="mB rewind"><i class="fa-solid fa-backward"></i></div>
-            <div class="mB play"><i class="fa-solid fa-play"></i></div>
+            <div class="mB play"><i id="songControll" class="fa-solid fa-play"></i></div>
             <div class="mB forward"><span class="fa-solid fa-forward"></span></div>
+            <audio id="song" src="./assets/BROKENGAMES.mp3"></audio>
           </div>
         </div>
         <div class="historia">

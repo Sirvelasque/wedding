@@ -72,3 +72,51 @@ function autoShowSlides() {
 
 // Llama a la función `autoShowSlides` cada 5 segundos (5000 milisegundos)
 let slideInterval = setInterval(autoShowSlides, 5000);
+
+
+const playButton = document.querySelector('.play');
+const cd = document.querySelector('.cd');
+const song = document.getElementById('song');
+const currentTimeEl = document.querySelector('.currentTime');
+const totalTimeEl = document.querySelector('.totalTime');
+const playBar = document.querySelector('.playBar');
+const player = document.querySelector(".player");
+const btnplay = document.querySelector("#songControll");
+
+// Manejar el evento de clic en el botón de play
+playButton.addEventListener('click', function() {
+    cd.classList.toggle('girando');
+    player.classList.toggle('hiddenPlay');
+    
+    btnplay.classList.toggle("fa-play");
+    btnplay.classList.toggle("fa-pause");
+    
+    // Si la canción está pausada, reprodúcela; de lo contrario, pausa la canción
+    if (song.paused) {
+        song.play();
+    } else {
+        song.pause();
+    }
+});
+
+// Actualizar el tiempo transcurrido, el tiempo total y la barra de progreso
+song.addEventListener('timeupdate', function() {
+    // Tiempo actual
+    const currentTime = formatTime(song.currentTime);
+    currentTimeEl.textContent = currentTime;
+
+    // Tiempo total
+    const totalTime = formatTime(song.duration);
+    totalTimeEl.textContent = totalTime;
+
+    // Progreso de la barra
+    const progressPercent = (song.currentTime / song.duration) * 100;
+    playBar.style.width = `${progressPercent}%`;
+});
+
+// Formatear el tiempo en minutos y segundos
+function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+}
