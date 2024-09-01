@@ -27,11 +27,11 @@
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 35%;
   width: auto;
   height: 60px;
   margin-top: -22px;
-  padding: 150px 15px;
+  padding: 150px 22px;
   color: white;
   font-weight: bold;
   font-size: 18px;
