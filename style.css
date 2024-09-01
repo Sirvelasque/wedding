@@ -208,7 +208,7 @@ body {
   width: 85px;
   top: 2.5px;
   left: 2.5px;
-  background-color: #aa7474;
+  background-image: url("./assets/bg.png");
 }
 
 .cdcenter {
@@ -217,8 +217,8 @@ body {
   height: 15px;
   width: 15px;
   border-radius: 50px;
-  top: 33px;
-  left: 33px;
+  top: 35px;
+  left: 35px;
   border: 1px solid #857b7b;
 }
 

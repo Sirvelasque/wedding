@@ -65,3 +65,10 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
+function autoShowSlides() {
+    slideIndex++;
+    showSlides(slideIndex);
+}
+
+// Llama a la función `autoShowSlides` cada 5 segundos (5000 milisegundos)
+let slideInterval = setInterval(autoShowSlides, 5000);
