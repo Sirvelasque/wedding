@@ -83,7 +83,7 @@ const playBar = document.querySelector('.playBar');
 const player = document.querySelector(".player");
 const btnplay = document.querySelector("#songControll");
 
-// Manejar el evento de clic en el botón de play
+// Evento del boton de reproduccion
 playButton.addEventListener('click', function() {
     cd.classList.toggle('girando');
     player.classList.toggle('hiddenPlay');
@@ -91,7 +91,7 @@ playButton.addEventListener('click', function() {
     btnplay.classList.toggle("fa-play");
     btnplay.classList.toggle("fa-pause");
     
-    // Si la canción está pausada, reprodúcela; de lo contrario, pausa la canción
+    // reproducir o pausar
     if (song.paused) {
         song.play();
     } else {
@@ -99,22 +99,17 @@ playButton.addEventListener('click', function() {
     }
 });
 
-// Actualizar el tiempo transcurrido, el tiempo total y la barra de progreso
 song.addEventListener('timeupdate', function() {
-    // Tiempo actual
     const currentTime = formatTime(song.currentTime);
     currentTimeEl.textContent = currentTime;
-
-    // Tiempo total
     const totalTime = formatTime(song.duration);
     totalTimeEl.textContent = totalTime;
 
-    // Progreso de la barra
     const progressPercent = (song.currentTime / song.duration) * 100;
     playBar.style.width = `${progressPercent}%`;
 });
 
-// Formatear el tiempo en minutos y segundos
+// Formato de tiempo de cancion
 function formatTime(time) {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);

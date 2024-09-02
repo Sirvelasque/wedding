@@ -49,7 +49,7 @@ body {
     top: 2px;
   
     width: 100%;
-    height: 300rem;
+    min-height: 300rem;
     z-index: 1;
     background-color: green;
     background-image: url("./assets/FONDO.jpg");
@@ -301,7 +301,7 @@ body {
   justify-items: center;
   align-self: center;
   width: 100%;
-  height: 1000px;
+  height: 900px;
 
 }
 
@@ -323,4 +323,68 @@ body {
   height: 100%;
 }
 
+.details, .detailHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
 
+.locationIco{
+  align-self: center;
+  width: 80px;
+  height: 120px;
+  margin-left: 80px;
+  background-image: url(./assets/position.svg);
+  background-repeat: no-repeat;
+}
+
+.hojitas {
+  width: 260px;
+  height: 30px;
+  background-image: url("./assets/Hojitas.svg");
+  background-repeat: no-repeat;
+}
+
+.placeName {
+  font-size: 18px;
+  margin-top: 14px;
+}
+
+.detailButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.btn {
+  width: 184px;
+  height: 48px;
+  background-color: #aa7474;
+  margin-top: 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #442e2e;
+
+}
+a:link, a:visited, a:active {
+  text-decoration:none;
+}
+
+.detailpic {
+  width: 288px;
+  height: 240px;
+  background-image: url("/assets/villa.jpg");
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.hour {
+  font-size: 22px;
+}

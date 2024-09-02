@@ -68,3 +68,9 @@
 #songControll {
     width: 20px;
 }
+
+.songName {
+    font-size: 18px;
+    margin-left: 30px;
+    padding-left: 30px;
+}
