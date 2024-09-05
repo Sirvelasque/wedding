@@ -80,7 +80,7 @@
 
   .branches {
     position: absolute;
-    top: 4500px
+    top: -900px
   }
 
   .branch {
@@ -119,4 +119,8 @@
 }
 .branches .branch:nth-of-type(6) {
   top: calc(220px * (0.5 * (6)));
+}
+
+.agendaBrances {
+  position: relative;
 }
