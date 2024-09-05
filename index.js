@@ -83,14 +83,34 @@ const playBar = document.querySelector('.playBar');
 const player = document.querySelector(".player");
 const btnplay = document.querySelector("#songControll");
 
+const playAnimation = () => {
+  cd.classList.toggle('girando');
+  player.classList.toggle('hiddenPlay');
+  
+  btnplay.classList.toggle("fa-play");
+  btnplay.classList.toggle("fa-pause");
+}
+
+
+// Function to play the audio
+function playAudio() {
+    // Play the audio
+    song.play();
+    playAnimation();
+    // Remove the event listeners after the first interaction
+    document.removeEventListener('click', playAudio);
+    document.removeEventListener('keydown', playAudio);
+}
+
+// Add event listeners for the first user interaction
+document.addEventListener('click', playAudio);
+document.addEventListener('keydown', playAudio);
+
+
 // Evento del boton de reproduccion
 playButton.addEventListener('click', function() {
-    cd.classList.toggle('girando');
-    player.classList.toggle('hiddenPlay');
-    
-    btnplay.classList.toggle("fa-play");
-    btnplay.classList.toggle("fa-pause");
-    
+
+    playAnimation();
     // reproducir o pausar
     if (song.paused) {
         song.play();
