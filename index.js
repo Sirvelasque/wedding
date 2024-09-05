@@ -115,3 +115,41 @@ function formatTime(time) {
     const seconds = Math.floor(time % 60);
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 }
+
+function smoothScrollDown() {
+  setTimeout(() => {
+    const scrollingElement = (document.scrollingElement || document.body);
+scrollingElement.scrollTop = scrollingElement.scrollHeight;
+  }, 500); // Retraso de 0.5 segundos (500ms)
+}
+
+
+// Selecciona el contenedor agendaAnim
+const agendaAnim = document.querySelector('.agendaAnchor');
+
+// Configura el observador
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Si agendaAnim es visible en pantalla
+      const agendaItems = document.querySelectorAll('.agendaItem');
+      // Agrega la clase 'animation' a cada agendaItem
+      agendaItems.forEach(item => {
+        item.classList.add('animation');
+      });
+      
+      smoothScrollDown();
+      // Si quieres detener la observación después de activar la animación, usa:
+      observer.unobserve(agendaAnim);
+      
+    }
+  });
+}, {
+  rootMargin: '5400px',
+  threshold: 1 // El 10% del elemento debe ser visible para activar la animación
+});
+
+// Comienza a observar agendaAnim
+observer.observe(agendaAnim);
+
+

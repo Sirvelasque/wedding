@@ -1,3 +1,12 @@
+:root {
+  --red: #640A14;
+  --orange: #D7491B;
+  --brown: #9E4620;
+  --sugar: #AC4314;
+  --white: #C7B9AE;
+  --gray: #A1977F;
+}
+
 body {
     margin: 0;
     font-family: "Junge";
@@ -51,26 +60,20 @@ body {
     width: 100%;
     min-height: 300rem;
     z-index: 1;
-    background-color: green;
     background-image: url("./assets/FONDO.jpg");
     background-size: cover;
     background-position: 0 950px;
   }
   
-  .parallax-layer.layer3 {
-    top: 20rem;
-  
-    width: 100%;
-    height: 50rem;
-  
-    background-color: blue;
-  }
 
   .imgmg {
     margin-top: 30px;
   }
   .imgmg img {
     max-width: 70%;
+    border-radius: 10px;
+    -webkit-mask-image: radial-gradient(circle, var(--white) 50%, transparent 100%);
+    mask-image: radial-gradient(circle, var(--white) 50%, transparent 100%);
   }
 
   .anillos {
@@ -96,6 +99,7 @@ body {
     width: 22rem;
     
     align-self: center;
+
   }
 
   .chart img{
@@ -104,7 +108,7 @@ body {
 
   .wedDate {
     font-family: "Playball";
-    color: #442e2e;
+    color: va(--orange);
     font-size: 2.5rem;
   }
 
@@ -128,7 +132,7 @@ body {
     grid-template-rows: 48px auto;
     width: 312px;
     height: 10rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--sugar);
 }
 
 .grid-item {
@@ -151,14 +155,15 @@ body {
 .title {
     grid-column: span 4;
     font-size: 2rem;
-    background-color: #aa7474;
+    background-color: var(--sugar);
+    color: var(--white);
 }
 
 .musicBox {
   position: relative;
   align-self: center;
   width: 320px;
-  color: #d6dee7;
+  color: var(--gray);
   margin-top: 110px;
 }
 .shape {
@@ -172,7 +177,7 @@ body {
   height: 90px;
   position: relative;
   left: 20px;
-  background-color: #fff;
+  background-color: var(--white);
   border-radius: 10px;
 
 }
@@ -183,7 +188,7 @@ body {
   height: 90px;
   border-radius: 50px;
   top: -45px;
-  background-color: #fff;
+  background-color: var(--white);
   left:30px;
 
 }
@@ -227,7 +232,7 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: 40px;
-  background-color: #fff;
+  background-color: var(--white);
   padding: 40px;
   border-radius: 5px;
   width: 70%;
@@ -238,10 +243,16 @@ body {
 }
 
 .historiaimg {
-  background-image: url("./assets/Nuestra-historia.svg");
+  background-image: url("./assets/historia.png");
   height: 200px;
-  width: 195px;
+  width: 295px;
   align-self: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.historiaTexto em {
+  color: var(--orange);
 }
 
 .historiarings {
@@ -263,7 +274,7 @@ body {
 .lefside {
   width: 50px;
     height: 50px;
-    background-color: #ffffff; 
+    background-color: var(--white); 
     mask-image: radial-gradient(circle, transparent 70%, black 75%);
     mask-position: right top;
     mask-size: 200% 200%;
@@ -272,7 +283,7 @@ body {
 .rightside {
   width: 50px;
   height: 50px;
-  background-color: #ffffff; 
+  background-color: var(--white); 
   mask-image: radial-gradient(circle, transparent 70%, black 75%);
   mask-position: left top;
   mask-size: 200% 200%;
@@ -316,7 +327,7 @@ body {
 .cartText {
   font-family: "Playball";
   font-size: 32px;
-  color: #424222;
+  color: var(--sugar);
 }
 
 .momentosSlider {
@@ -362,16 +373,17 @@ body {
 }
 
 .btn {
-  width: 184px;
+  width: 194px;
   height: 48px;
-  background-color: #aa7474;
+  background-color: var(--sugar);
   margin-top: 20px;
   border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  color: #442e2e;
+  color: var(--white);
+  align-self: center;
 
 }
 a:link, a:visited, a:active {
@@ -394,4 +406,23 @@ a:link, a:visited, a:active {
 
 .hour {
   font-size: 22px;
+}
+
+.codigo {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--sugar);
+  margin-top: 60px;
+}
+
+.dress {
+  margin-top: 20px;
+  width: 150px;
+  height: 120px;
+  background-image: url("/assets/Dress-code.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
