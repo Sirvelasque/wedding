@@ -1,6 +1,21 @@
 .agenda {
+  margin-top: 30px;
     min-height: 720px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
   }
+
+.agendaPic {
+  width: 270px;
+  height: 170px;
+  background-image: url("./assets/agenda.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  align-self: center;
+}
   
   .agendaAnim {
     display: flex;
@@ -11,37 +26,46 @@
   .agendaItem {
     width: 0;
     height: 0;
-    background-color: red;
     margin: 10px 0;
     transition: width 0.5s ease, height 0.5s ease;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-top: 80px;
+    overflow: hidden;
   }
   
   .animation {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 120px;
   }
   
   .agendaAnim .agendaItem:nth-of-type(1) {
+    background-image: url("./assets/agendaa.svg");
     transition-delay: 0.5s;
   }
   
   .agendaAnim .agendaItem:nth-of-type(2) {
+    background-image: url("./assets/agendab.svg");
     transition-delay: 0.75s;
   }
   
   .agendaAnim .agendaItem:nth-of-type(3) {
+    background-image: url("./assets/agendac.svg");
     transition-delay: 1s;
   }
   
   .agendaAnim .agendaItem:nth-of-type(4) {
+    background-image: url("./assets/agendad.svg");
     transition-delay: 1.25s;
   }
   
   .agendaAnim .agendaItem:nth-of-type(5) {
+    background-image: url("./assets/agendae.svg");
     transition-delay: 1.5s;
   }
   
   .agendaAnim .agendaItem:nth-of-type(6) {
+    background-image: url("./assets/agendaf.svg");
     transition-delay: 1.75s;
     
   }
@@ -53,3 +77,46 @@
     height: 200px;
   }
   
+
+  .branches {
+    position: absolute;
+    top: 4500px
+  }
+
+  .branch {
+    background-image: url("./assets/branch.png");
+    height: 140px;
+    width: 140px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    transform: rotate(120deg);
+  }
+
+  .branches .branch:nth-of-type(even) {
+    left: 70%; 
+  }
+
+  .branches .branch:nth-of-type(odd) {
+    right: 70%;
+    transform: scaleX(-1) rotate(120deg);
+  }
+
+  .branches .branch:nth-of-type(1) {
+    top: calc(200px * (0.5 * (1)));
+}
+.branches .branch:nth-of-type(2) {
+  top: calc(220px * (0.5 * (2)));
+}
+.branches .branch:nth-of-type(3) {
+  top: calc(220px * (0.5 * (3)));
+}
+.branches .branch:nth-of-type(4) {
+  top: calc(220px * (0.5 * (4)));
+}
+.branches .branch:nth-of-type(5) {
+  top: calc(220px * (0.5 * (5)));
+}
+.branches .branch:nth-of-type(6) {
+  top: calc(220px * (0.5 * (6)));
+}
