@@ -1,40 +1,7 @@
 const targetDate = new Date('December 27, 2024 17:00:00').getTime();
 
 // Seleccionar los spans en el orden de días, horas, minutos y segundos
-const spans = document.querySelectorAll('span');
 
-// Función para actualizar el contador
-function updateCountdown() {
-    const now = new Date().getTime();
-    const timeLeft = targetDate - now;
-
-    // Calcular días, horas, minutos y segundos
-    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-    // Actualizar los spans con los valores respectivos
-    spans[0].textContent = days;
-    spans[1].textContent = hours;
-    spans[2].textContent = minutes;
-    spans[3].textContent = seconds;
-
-    // Si la cuenta regresiva ha terminado
-    if (timeLeft < 0) {
-        clearInterval(interval);
-        spans[0].textContent = 0;
-        spans[1].textContent = 0;
-        spans[2].textContent = 0;
-        spans[3].textContent = 0;
-    }
-}
-
-// Actualizar el contador cada segundo
-const interval = setInterval(updateCountdown, 1000);
-
-// Inicializa el contador en la carga de la página
-updateCountdown();
 
 let slideIndex = 1;
 showSlides(slideIndex);
@@ -100,24 +67,27 @@ function playAudio() {
     // Remove the event listeners after the first interaction
     document.removeEventListener('click', playAudio);
     document.removeEventListener('keydown', playAudio);
+    document.removeEventListener('scroll', playAudio);
+    playButton.addEventListener('click', function() {
+
+      playAnimation();
+      // reproducir o pausar
+      if (song.paused) {
+          song.play();
+      } else {
+          song.pause();
+      }
+  });
 }
 
 // Add event listeners for the first user interaction
 document.addEventListener('click', playAudio);
 document.addEventListener('keydown', playAudio);
+document.addEventListener('scroll', playAudio);
 
 
 // Evento del boton de reproduccion
-playButton.addEventListener('click', function() {
 
-    playAnimation();
-    // reproducir o pausar
-    if (song.paused) {
-        song.play();
-    } else {
-        song.pause();
-    }
-});
 
 song.addEventListener('timeupdate', function() {
     const currentTime = formatTime(song.currentTime);
@@ -172,4 +142,104 @@ const observer = new IntersectionObserver((entries) => {
 // Comienza a observar agendaAnim
 observer.observe(agendaAnim);
 
+const timer = [
+  {
+    className: "days",
+    label: "Días",
+  },
+  {
+    className: "hours",
+    label: "Horas",
+  },
+  {
+    className: "minutes",
+    label: "Minutos",
+  },
+  {
+    className: "seconds",
+    label: "Segundos",
+  },
+];
+
+const countdownContainer = document.querySelector(".countdown");
+const countToDate = new Date().setHours(new Date().getHours() + 240);
+let previous;
+
+function showTimer() {
+  timer.forEach((element) => {
+    const div = document.createElement("div");
+    div.classList.add(element.className);
+    div.innerHTML = `
+      <div class="flip-card">
+        <div class="top">00</div>
+        <div class="bottom">00</div>
+      </div>
+      <p class="title">${element.label}</p>
+    `;
+
+    countdownContainer.append(div);
+  });
+}
+
+showTimer();
+
+setInterval(() => {
+  const currentDate = new Date();
+  const timeBetweenDates = targetDate - currentDate;
+  if (timeBetweenDates !== previous) {
+    flipAllCards(timeBetweenDates);
+  }
+  previous = timeBetweenDates;
+}, 1000);
+
+function flipAllCards(timeLeft) {
+  const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+  const daysCard = document.querySelector(".days > .flip-card");
+  const hoursCard = document.querySelector(".hours > .flip-card");
+  const minutesCard = document.querySelector(".minutes > .flip-card");
+  const secondsCard = document.querySelector(".seconds > .flip-card");
+
+  flipCard(daysCard, days);
+  flipCard(hoursCard, hours);
+  flipCard(minutesCard, minutes);
+  flipCard(secondsCard, seconds);
+}
+
+function flipCard(flipCard, time) {
+  time = String(time).padStart(2, "0");
+  const currentValue = flipCard.querySelector(".top").innerText;
+
+  if (time == currentValue) return;
+
+  const topFlip = document.createElement("div");
+  topFlip.classList.add("top-flip");
+  topFlip.innerText = currentValue;
+
+  const bottomFlip = document.createElement("div");
+  bottomFlip.classList.add("bottom-flip");
+  bottomFlip.innerText = time;
+
+  const topHalf = flipCard.querySelector(".top");
+  const bottomHalf = flipCard.querySelector(".bottom");
+
+  topFlip.addEventListener("animationstart", () => {
+    topHalf.innerText = time;
+  });
+
+  topFlip.addEventListener("animationend", () => {
+    topFlip.remove();
+  });
+
+  bottomFlip.addEventListener("animationend", () => {
+    bottomHalf.innerText = time;
+    bottomFlip.remove();
+  });
+
+  flipCard.appendChild(topFlip);
+  flipCard.appendChild(bottomFlip);
+}
 
