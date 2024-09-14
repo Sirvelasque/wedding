@@ -64,11 +64,11 @@ body {
     top: 2px;
   
     width: 100%;
-    min-height: 300rem;
+    min-height: 360rem;
     z-index: 1;
     background-image: url("./assets/FONDO.jpg");
     background-size: cover;
-    background-position: 0 950px;
+    background-position: 0 1200px;
   }
   
 
