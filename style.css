@@ -348,6 +348,10 @@ body {
   height: 100%;
 }
 
+.details {
+  margin-top: 40px;
+}
+
 .details, .detailHeader {
   display: flex;
   flex-direction: column;
@@ -371,6 +375,10 @@ body {
   height: 30px;
   background-image: url("./assets/Hojitas.svg");
   background-repeat: no-repeat;
+}
+
+.place {
+  margin-top: 40px;
 }
 
 .placeName {
@@ -560,14 +568,28 @@ a:link, a:visited, a:active {
   }
 }
 
-/* p {
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  color: var(--grayish-blue);
+.agenda { margin-top: 40px;}
+
+.regalos {
   margin-top: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px;
+  margin-bottom: 40px;
 }
 
-.title {
-  margin-top: 1.2rem;
-  font-size: 0.8rem;
-} */
+.sobre {
+  width: 120px;
+  height: 100px;
+  margin: 20px 0;
+}
+
+.grid-item p {
+  min-width: 75px;
+}
+
+.gallery {
+  display: none;
+}

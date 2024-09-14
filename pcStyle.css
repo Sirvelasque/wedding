@@ -1,0 +1,34 @@
+@media (min-width: 576px){
+    .chart{
+        height: 400px;
+        width: 500px;
+    }
+
+    .momentos_Ico {
+        width: 120px;
+        height: 120px;
+        background-size: contain;
+        
+    }
+    
+    .momentos {
+        height: 2500px;
+    }
+
+    .numbertext, .momentosSlider {
+        display: none;
+    }
+
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:space-evenly;
+    }
+
+    .galleryPic {
+        flex-basis: calc(33.33% - 10px);
+        margin-bottom: 10px;
+        object-fit: cover;
+    }
+
+}
