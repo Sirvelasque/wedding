@@ -12,7 +12,7 @@
     }
     
     .momentos {
-        height: 2500px;
+        height: fit-content;
     }
 
     .numbertext, .momentosSlider {
@@ -26,7 +26,7 @@
     }
 
     .galleryPic {
-        flex-basis: calc(33.33% - 10px);
+        flex-basis: 530px;
         margin-bottom: 10px;
         object-fit: cover;
     }
