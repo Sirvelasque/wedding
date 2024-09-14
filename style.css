@@ -594,7 +594,6 @@ a:link, a:visited, a:active {
   display: none;
 }
 
-.hidden { display: none;}
 
 .qr {
   background-image: url(./assets/kashtag.jfif);
@@ -615,4 +614,11 @@ a:link, a:visited, a:active {
   background-color: var(--sugar);
   font-weight: bold;
   padding: 10px;
+  height: 560px;
+  transition: height 0.5s ease;
+}
+
+.hidden {
+   height: 1px;
+   overflow: hidden;
 }
