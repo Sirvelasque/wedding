@@ -49,6 +49,8 @@ const totalTimeEl = document.querySelector('.totalTime');
 const playBar = document.querySelector('.playBar');
 const player = document.querySelector(".player");
 const btnplay = document.querySelector("#songControll");
+const cuentas = document.querySelector(".cuentas");
+const btnCuentas = document.querySelector(".btncuentas");
 
 const playAnimation = () => {
   cd.classList.toggle('girando');
@@ -243,3 +245,8 @@ function flipCard(flipCard, time) {
   flipCard.appendChild(bottomFlip);
 }
 
+
+
+btnCuentas.addEventListener("click", () => {
+  cuentas.classList.toggle("hidden");
+});

@@ -593,3 +593,26 @@ a:link, a:visited, a:active {
 .gallery {
   display: none;
 }
+
+.hidden { display: none;}
+
+.qr {
+  background-image: url(./assets/kashtag.jfif);
+  width: 300px;
+  height: 300px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  left: 15px;
+}
+
+.cuentas, .cuenta, .kashtag {
+  margin-top: 40px;
+}
+
+.cuentas {
+  margin-bottom: 20px;
+  background-color: var(--sugar);
+  font-weight: bold;
+  padding: 10px;
+}
