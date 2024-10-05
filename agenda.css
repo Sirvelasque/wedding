@@ -26,31 +26,32 @@
   .agendaItem {
     width: 0;
     height: 0;
-    margin: 10px 0;
-    transition: width 0.5s ease, height 0.5s ease;
-    background-size: contain;
+    margin: 15px 0;
+    transition: width 1s ease, height 0.5s ease;
+    background-size: 120px 120px;
+    background-position-x: 20px;
     background-repeat: no-repeat;
-    padding-top: 80px;
+    padding-top: 120px;
     overflow: hidden;
   }
   
   .animation {
-    width: 80px;
-    height: 120px;
+    width: 140px;
+    height: 160px;
   }
   
   .agendaAnim .agendaItem:nth-of-type(1) {
-    background-image: url("./assets/agendaa.svg");
+    background-image: url("./assets/ceremony.png");
     transition-delay: 0.5s;
   }
   
   .agendaAnim .agendaItem:nth-of-type(2) {
-    background-image: url("./assets/agendab.svg");
+    background-image: url("./assets/coffee.png");
     transition-delay: 0.75s;
   }
   
   .agendaAnim .agendaItem:nth-of-type(3) {
-    background-image: url("./assets/agendac.svg");
+    background-image: url("./assets/entrada.png");
     transition-delay: 1s;
   }
   
@@ -60,14 +61,23 @@
   }
   
   .agendaAnim .agendaItem:nth-of-type(5) {
-    background-image: url("./assets/agendae.svg");
+    background-image: url("./assets/agendaa.svg");
     transition-delay: 1.5s;
   }
   
   .agendaAnim .agendaItem:nth-of-type(6) {
-    background-image: url("./assets/agendaf.svg");
+    background-image: url("./assets/camera.png");
     transition-delay: 1.75s;
-    
+  }
+
+  .agendaAnim .agendaItem:nth-of-type(7) {
+    background-image: url("./assets/agendae.svg");
+    transition-delay: 2s;
+  }
+
+  .agendaAnim .agendaItem:nth-of-type(8) {
+    background-image: url("./assets/agendac.svg");
+    transition-delay: 2.25s;
   }
 
   .agendaAnchor {
@@ -80,7 +90,7 @@
 
   .branches {
     position: absolute;
-    top: -900px
+    top: -1450px
   }
 
   .branch {
@@ -93,32 +103,38 @@
     transform: rotate(120deg);
   }
 
-  .branches .branch:nth-of-type(even) {
-    left: 70%; 
+  .branches .branch:nth-of-type(odd) {
+    left: 85%; 
   }
 
-  .branches .branch:nth-of-type(odd) {
-    right: 70%;
+  .branches .branch:nth-of-type(even) {
+    right: 85%;
     transform: scaleX(-1) rotate(120deg);
   }
 
   .branches .branch:nth-of-type(1) {
-    top: calc(200px * (0.5 * (1)));
+    top: calc(240px * (0.1 * (1) ));
 }
 .branches .branch:nth-of-type(2) {
-  top: calc(220px * (0.5 * (2)));
+  top: calc(240px * (0.5 * (2)));
 }
 .branches .branch:nth-of-type(3) {
-  top: calc(220px * (0.5 * (3)));
+  top: calc(280px * (0.5 * (3)));
 }
 .branches .branch:nth-of-type(4) {
-  top: calc(220px * (0.5 * (4)));
+  top: calc(305px * (0.5 * (4)));
 }
 .branches .branch:nth-of-type(5) {
-  top: calc(220px * (0.5 * (5)));
+  top: calc(320px * (0.5 * (5)));
 }
 .branches .branch:nth-of-type(6) {
-  top: calc(220px * (0.5 * (6)));
+  top: calc(330px * (0.5 * (6)));
+}
+.branches .branch:nth-of-type(7) {
+  top: calc(340px * (0.5 * (7)));
+}
+.branches .branch:nth-of-type(8) {
+  top: calc(340px * (0.5 * (8)));
 }
 
 .agendaBrances {
