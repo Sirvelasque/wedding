@@ -51,7 +51,7 @@
   }
   
   .agendaAnim .agendaItem:nth-of-type(3) {
-    background-image: url("./assets/entrada.png");
+    background-image: url("./assets/couple.jpg");
     transition-delay: 1s;
   }
   
@@ -71,7 +71,7 @@
   }
 
   .agendaAnim .agendaItem:nth-of-type(7) {
-    background-image: url("./assets/agendae.svg");
+    background-image: url("./assets/agendae.png");
     transition-delay: 2s;
   }
 
@@ -139,4 +139,8 @@
 
 .agendaBrances {
   position: relative;
+}
+
+.onlineOptions {
+  margin-top: 20px;
 }

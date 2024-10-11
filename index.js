@@ -245,8 +245,3 @@ function flipCard(flipCard, time) {
   flipCard.appendChild(bottomFlip);
 }
 
-
-
-btnCuentas.addEventListener("click", () => {
-  cuentas.classList.toggle("hidden");
-});
