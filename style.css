@@ -77,9 +77,9 @@ body {
   }
   .imgmg img {
     max-width: 70%;
-    border-radius: 10px;
+    border-radius: 28px;
     -webkit-mask-image: radial-gradient(circle, var(--white) 50%, transparent 100%);
-    mask-image: radial-gradient(circle, var(--white) 50%, transparent 100%);
+    mask-image: radial-gradient(circle, var(--white) 20%, transparent 100%);
   }
 
   .anillos {
@@ -368,6 +368,12 @@ body {
   margin-left: 80px;
   background-image: url(./assets/position.svg);
   background-repeat: no-repeat;
+}
+
+.galleryPic {
+  display: flex;
+  align-items: center;
+  
 }
 
 .hojitas {
