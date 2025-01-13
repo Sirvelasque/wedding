@@ -160,7 +160,7 @@ body {
 
 .titles {
     grid-column: span 4;
-    font-size: 48px;
+    font-size: 28px;
     /* background-color: var(--sugar); */
     color: var(--red);
 }

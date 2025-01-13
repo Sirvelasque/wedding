@@ -187,7 +187,7 @@ showTimer();
 
 setInterval(() => {
   const currentDate = new Date();
-  const timeBetweenDates = targetDate - currentDate;
+  const timeBetweenDates = currentDate - targetDate;
   if (timeBetweenDates !== previous) {
     flipAllCards(timeBetweenDates);
   }

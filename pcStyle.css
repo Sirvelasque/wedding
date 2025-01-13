@@ -31,4 +31,11 @@
         object-fit: cover;
     }
 
+    .titles {
+        grid-column: span 4;
+        font-size: 48px;
+        /* background-color: var(--sugar); */
+        color: var(--red);
+    }
+
 }
